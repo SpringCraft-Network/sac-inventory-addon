@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+}
+
+group = 'it.mandress101.sac.inventory'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.codemc.io/repository/maven-snapshots/' }
+    maven { url 'https://repo.papermc.io/repository/maven-public/' }
+    maven {
+        url = 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/'
+        content {
+            includeGroup 'org.bukkit'
+            includeGroup 'org.spigotmc'
+        }
+    }
+    maven { url = 'https://oss.sonatype.org/content/repositories/snapshots' }
+    maven { url = 'https://oss.sonatype.org/content/repositories/central' }
+}
+
+dependencies {
+    compileOnly 'org.spigotmc:spigot-api:1.12-R0.1-SNAPSHOT'
+    compileOnly 'org.jetbrains:annotations:23.0.0'
+
+    compileOnly fileTree(dir: rootProject.projectDir.toString() + '/libs', includes: ['*.jar'])
+}

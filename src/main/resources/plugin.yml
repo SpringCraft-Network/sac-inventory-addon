@@ -1,0 +1,6 @@
+name: SACInvAddon
+version: 1.0.0
+main: it.mandress101.sac.inventory.Main
+api-version: 1.13
+depend:
+  - SAC
